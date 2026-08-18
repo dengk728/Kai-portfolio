@@ -1,0 +1,436 @@
+.font-outfit-normal {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 14;
+  font-weight: 270;
+  font-style: normal;
+}
+.font-outfit-light {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+  font-style: italic;
+}
+
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+.logo {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  color: white;
+  z-index: 999;
+  width: 75px;
+}
+.logo-link {
+  display: block;
+}
+.logo img {
+  width: 100%;
+}
+/* Dropdown */
+
+.logo-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateY(-100px);
+  text-align: end;
+  width: 75px;
+
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    visibility 0.25s;
+}
+.logo-dropdown-inner {
+  overflow: hidden;
+}
+.logo-dropdown a {
+  display: block;
+
+  padding: 6px 2px;
+
+  color: grey;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.logo-dropdown a:hover {
+  text-decoration: underline;
+}
+.logo:hover .logo-dropdown,
+.logo:focus-within .logo-dropdown {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 60px 30px 5px 30px;
+  border-bottom: 2px solid rgb(176, 175, 175);
+}
+
+nav {
+  width: 270px;
+  padding: 15px;
+  z-index: 9999;
+  top: 0px;
+  position: fixed;
+}
+.nav-content {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+}
+.hamburger {
+  position: fixed;
+  left: 20px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  pointer-events: stroke;
+  color: grey;
+  font-weight: 600;
+  z-index: 9999;
+  font-size: 35px;
+  display: none;
+}
+@media (max-width: 768px) {
+  nav {
+    position: fixed;
+    left: 0;
+
+    width: calc(100vw - 50px);
+    height: 70px;
+    padding: 0 15px;
+
+    background: transparent;
+    z-index: 9999;
+  }
+
+  .hamburger {
+    display: block;
+
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+    color: grey;
+
+    font-size: 35px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .nav-content {
+    position: absolute;
+    top: 20px;
+    left: 60px;
+    right: 170px;
+
+    width: calc(100vw - 230px);
+    height: auto;
+    padding: 10px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  nav:hover .nav-content,
+  nav:focus-within .nav-content {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  nav a {
+    display: block;
+    margin: 0;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 460px) {
+  .nav-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px 2px;
+    height: auto;
+    align-items: center;
+    right: 80px;
+    width: calc(100% - 140px);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: grey;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  list-style: none;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background-color: #f5f5f5;
+  font-family: "Outfit", sans-serif;
+}
+.page {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 30px;
+  gap: 30px;
+}
+
+.project-window {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 140px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  overflow: hidden; /* Keeps things contained within the 600px limit */
+}
+
+p {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(103, 103, 103);
+  margin: 0px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 24px;
+  color: rgb(176, 175, 175);
+  align-self: center;
+  margin: 15px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(103, 103, 103);
+  margin: 0px;
+  margin-bottom: 10px;
+}
+
+/* Sidebar Panel */
+.sidebar {
+  position: relative;
+  width: 300px;
+  background-color: rgb(207, 207, 207);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  border-right: 2px solid #ccc;
+}
+.lable {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  /*
+  position: sticky;
+  z-index: 100;
+  top: 0px;
+  */
+}
+/* Cards in Sidebar */
+.sidebar-card {
+  background: white;
+  padding: 15px;
+  border-radius: 6px;
+  height: auto;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-height: 0; /* Crucial fix: allows cards to shrink below content size if needed */
+
+  /* 4. Clip any internal text or elements that get pushed out */
+  overflow: hidden;
+  justify-content: center;
+}
+
+.sidebar-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-card img {
+  width: 100%;
+  object-fit: cover; /* Crops the image perfectly to prevent stretching or squishing */
+  flex-shrink: 0;
+  min-height: 0;
+}
+
+/* Main Viewer Panel */
+.main-panel {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  overflow-y: auto;
+}
+
+/* Active Main Card */
+.main-viewer {
+  padding: 30px;
+  border-radius: 2px;
+  background: #f5f5f5;
+  display: flex;
+  height: 90%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-viewer model-viewer {
+  width: 100%;
+  height: 100%; /* Adjust this number to make it as tall as you want */
+}
+
+.main-viewer img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.hidden {
+  display: none;
+}
+@media (max-width: 768px) {
+  .project-window {
+    /* 1. Stack panels vertically and flip order so sidebar sits at the bottom */
+    flex-direction: column-reverse;
+    overflow: hidden; /* Prevent page-wide scrolling issues */
+  }
+
+  /* Transform Sidebar into a Bottom Panel */
+  .sidebar {
+    width: 100%; /* Stretch across the full screen width */
+    height: auto; /* Let content define height up to a max limit */
+    max-height: 253px; /* Restrict it to take up at most 35% of screen height */
+
+    /* 2. Switch card layout from a vertical stack to a horizontal scrollable row */
+    flex-direction: row;
+    overflow-x: auto; /* Allow horizontal swiping/scrolling for cards */
+    overflow-y: hidden; /* Prevent vertical scrolling inside the bar */
+
+    padding: 12px;
+    gap: 10px;
+    border-right: none;
+    border-top: 2px solid #ccc; /* Add border to top instead of right */
+  }
+
+  /* Adapt Cards for Horizontal Mobile Layout */
+  .sidebar-card {
+    /* 3. Give them a fixed base width so they don't squish into tiny columns */
+    flex: 0 0 120px;
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .lable {
+    width: 140px;
+    min-width: 140px;
+    height: 100%;
+    position: sticky;
+    left: 0px;
+    background-color: rgb(207, 207, 207);
+    z-index: 999;
+    border-radius: 6px;
+  }
+  .lable p {
+    font-size: 11px;
+  }
+  .lable h3 {
+    font-size: 13px;
+    margin: 0 0 4px 0;
+  }
+
+  /* Main Viewer Panel Adjustments */
+  .main-panel {
+    flex: 1; /* Let the viewer consume all remaining top screen space */
+    padding: 15px; /* Tighter padding for smaller screens */
+  }
+
+  /* Resize the 3D model viewer to match the new fluid height constraint */
+  .main-viewer {
+    height: calc(
+      100% - 40px
+    ); /* Fill out the available mobile viewer space precisely */
+    min-height: 250px;
+    padding: 15px;
+  }
+
+  .main-viewer model-viewer {
+    height: 100%; /* Force 3D canvas to scale with dynamic container sizes */
+  }
+}

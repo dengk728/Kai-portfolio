@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "../web-content-layout"
+	},
+	{
+		"path": "."
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "Kai-26-portfolio-website"
+  }
+}

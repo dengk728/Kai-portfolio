@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kai's Digital Garments Gallery</title>
+
+    <link rel="stylesheet" type="text/css" href="style-gallary.css" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+    rel="stylesheet"
+  />
+
+    <script src="script.js"></script>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"
+    >
+    </script>
+  </head>
+
+  <body>
+    <div id="navbar-component"></div>
+    <div id="logo-component"></div>
+
+<div class="container">
+<h2>Garments Gallary</h2>
+</div>
+
+<div class="page">
+<div class="project-window">
+    <div class="sidebar">
+
+    <div class="lable">
+     <a href="page04-project-eman.html">
+        <h3>Curves Out-Design With Eman</h3>
+     </a>
+      <p>Accessible Fashion × Macy</p>
+      <p>THE CURVES AROUND DRESS</p>
+      <p>May, 2026</p>
+    </div>
+
+      <div
+        class="sidebar-card"
+        onclick="
+          updateMainCard( this,
+            `<model-viewer src='project-eman/digital-assets/webdisplay.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='1.11'></model-viewer>`
+          )">
+        <model-viewer
+          src="project-eman/digital-assets/webdisplay.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          tone-mapping="neutral"
+          shadow-intensity="1"
+          exposure="1.11  ;"
+        >
+        </model-viewer>
+      </div>
+
+      <div
+        class="sidebar-card"
+        onclick="
+          updateMainCard(this,
+            `<img src='project-eman/digital-assets/pattern-layout.png' alt='2D pattern'>`
+          )">
+        <img src="project-eman/digital-assets/pattern-layout.png" alt="2D pattern">
+      </div>
+            <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src='project-eman/p1-photo/576A0061-edited.jpg' alt='schemata'>`
+          )">
+        <img src="project-eman/p1-photo/576A0061-edited.jpg" alt="schemata">
+      </div>
+
+    </div>
+    <!-- Main Content Panel -->
+    <div class="main-panel">
+      <div class="main-viewer">
+        <h3>Select a card from the sidebar</h3>
+      </div>
+
+    </div>
+    </div>
+
+<div class="project-window">
+    <div class="sidebar">
+
+    <div class="lable">
+     <a href="page02-project-vein.html">
+        <h3 >VEIN</h3>
+     </a>
+      <p>All pieces constructed by connecting several pieces of the templates following human body kinetics.</p>
+      <p>modular, customizable</p>
+      <p>May, 2025</p>
+    </div>
+
+      <!-- CARD 1 (Note the order: ID first, then HTML inside backticks) -->
+      <div
+        class="sidebar-card card-small"
+        onclick="
+          updateMainCard(this,
+            `<model-viewer src='project-vein/vein-pants-women.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
+          )">
+        <model-viewer
+          src="project-vein/vein-pants-women.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          tone-mapping="neutral"
+          shadow-intensity="1"
+          exposure="0.75  ;"
+        >
+        </model-viewer>
+      </div>
+
+      <!-- CARD 2 -->
+      <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src=project-vein/gallery-assets/pants-pattern.png alt='2D pattern'>`,
+          )">
+        <img src=project-vein/gallery-assets/pants-pattern.png alt="2D pattern">
+      </div>
+            <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src=project-vein/gallery-assets/vein-pants-flats.png alt='schemata'>`,
+          )">
+        <img src=project-vein/gallery-assets/vein-pants-flats.png alt="schemata">
+      </div>
+            <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src=project-vein/photoshoot/unisex.jpg alt='2D pattern'>`,
+          )">
+        <img src= project-vein/photoshoot/unisex.jpg alt="2D pattern">
+      </div>
+
+
+    </div>
+    <!-- Main Content Panel -->
+    <div class="main-panel">
+      <div class="main-viewer">
+        <h3>Select a card from the sidebar</h3>
+        <p>The details of the selected card will appear here.</p>
+      </div>
+
+    </div>
+    </div>
+
+    <div class="project-window">
+    <div class="sidebar">
+
+    <div class="lable">
+     <a href="page02-project-vein.html">
+        <h3 >VEIN</h3>
+     </a>
+      <p>All pieces constructed by connecting several pieces of the templates following human body kinetics.</p>
+      <p>modular, customizable</p>
+      <p>May, 2025</p>
+    </div>
+
+      <!-- CARD 1 (Note the order: ID first, then HTML inside backticks) -->
+      <div
+        class="sidebar-card card-small"
+        onclick="
+          updateMainCard(this,
+            `<model-viewer src='project-vein/jacket-wool.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
+          )">
+        <model-viewer
+          src="project-vein/jacket-wool.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          tone-mapping="neutral"
+          shadow-intensity="1"
+          exposure="0.75  ;"
+        >
+        </model-viewer>
+      </div>
+
+      <!-- CARD 2 -->
+      <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src=project-vein/gallery-assets/vein-jacket01-flats.png alt='2D pattern'>`,
+          )">
+        <img src=project-vein/gallery-assets/vein-jacket01-flats.png alt="2D pattern">
+      </div>
+            <div
+        class="sidebar-card card-medium"
+        onclick="
+          updateMainCard(this,
+            `<img src=project-vein/gallery-assets/jacket01-pattern.png alt='schemata'>`,
+          )">
+        <img src=project-vein/gallery-assets/jacket01-pattern.png alt="schemata">
+      </div>
+
+    </div>
+    <!-- Main Content Panel -->
+    <div class="main-panel">
+      <div class="main-viewer">
+        <h3>Select a card from the sidebar</h3>
+        <p>The details of the selected card will appear here.</p>
+      </div>
+
+    </div>
+    </div>
+
+<div class="project-window">
+    <div class="sidebar">
+
+    <div class="lable">
+     <a href="page02-project-vein.html">
+        <h3 >VEIN</h3>
+     </a>
+      <p>All pieces constructed by connecting several pieces of the templates following human body kinetics.</p>
+      <p>modular, customizable</p>
+      <p>May, 2025</p>
+    </div>
+
+      <div
+        class="sidebar-card"
+        onclick="
+          updateMainCard( this,
+            `<model-viewer src='project-vein/gallery-assets/vein-cropped-jacket.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.76'></model-viewer>`
+          )">
+        <model-viewer
+          src="project-vein/gallery-assets/vein-cropped-jacket.glb"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          tone-mapping="neutral"
+          shadow-intensity="1"
+          exposure="0.76;"
+        >
+        </model-viewer>
+      </div>
+
+      <div
+        class="sidebar-card"
+        onclick="
+          updateMainCard(this,
+            `<img src='project-vein/gallery-assets/cropped-jacket-pattern.png' alt='2D pattern'>`
+          )">
+        <img src="project-vein/gallery-assets/cropped-jacket-pattern.png" alt="2D pattern">
+      </div>
+      <div
+        class="sidebar-card"
+        onclick="
+          updateMainCard(this,
+            `<img src='project-vein/photoshoot/VEIN-final-124.jpeg' alt='2D pattern'>`
+          )">
+        <img src="project-vein/photoshoot/VEIN-final-124.jpeg" alt="2D pattern">
+      </div>
+
+    </div>
+    <!-- Main Content Panel -->
+    <div class="main-panel">
+      <div class="main-viewer">
+        <h3>Select a card from the sidebar</h3>
+      </div>
+
+    </div>
+    </div>
+
+
+    </div>
+  </body>
+</html>

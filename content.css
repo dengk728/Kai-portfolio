@@ -1,0 +1,618 @@
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: url("texture.png") repeat;
+  background-size: 500px auto;
+
+  opacity: 0.12;
+  pointer-events: none;
+
+  z-index: -1;
+}
+.gallery-area {
+  width: 100%;
+  background: #cfcfcf 50%;
+  box-sizing: border-box;
+  /*background-image:
+    url("texture.png"),
+    linear-gradient(180deg, #cfcfcf 0%, #cfcfcf 5%, #ffffff 100%);
+
+  background-repeat: repeat, no-repeat;
+
+  background-size:
+    clamp(1000px) auto,
+    100% 100%;
+
+  background-position:
+    center top,
+    center;
+  background-blend-mode: luminosity;*/
+}
+
+/* =========================
+   PROJECT SECTION
+========================= */
+.project-section {
+  position: relative;
+  min-height: 500vh;
+  margin-bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(207, 207, 207, 0.6) 0%,
+    rgba(207, 207, 207, 0.6) 40%,
+    rgba(255, 255, 255, 0.6) 70%
+  );
+}
+
+.gallery-heading {
+  position: sticky;
+  top: 70px;
+  left: 40px;
+  z-index: 20;
+
+  width: 42vw;
+  height: 180px;
+
+  margin: 0 0 40px 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.8em;
+  line-height: 0.9;
+
+  color: #666;
+
+  transform-origin: left center;
+  will-change: transform, font-size, letter-spacing;
+}
+
+.gallery-heading span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.gallery-heading span:nth-child(2) {
+  transform: translateX(58vw);
+}
+
+.project-stack {
+  position: relative;
+  height: 420vh;
+}
+
+.project-card {
+  position: sticky;
+  top: 100px;
+  right: 0px;
+
+  height: 34vh;
+  width: auto;
+  margin-right: 50px;
+  margin-left: 0px;
+  margin-bottom: 120px;
+
+  transform-origin: right top;
+  will-change: transform;
+}
+.project-card img {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: auto;
+  display: block;
+  border-radius: 7px;
+}
+
+/* =========================
+   FEATURE SECTIONS
+========================= */
+
+.feature-section {
+  position: relative;
+  min-height: 150vh;
+  padding-top: 0;
+  background: linear-gradient(180deg, #cfcfcf 0%, #cfcfcf 5%, #ffffff 100%);
+  overflow: hidden;
+  isolation: isolate;
+}
+/*
+.feature-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("texture.png") repeat;
+  background-size: 400px auto; 
+  opacity: 0.12;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  z-index: 3;
+}
+*/
+.feature-section:last-child {
+  margin-bottom: 0;
+}
+.feature-section::before {
+  content: "";
+  display: block;
+  height: 1px;
+}
+
+.feature-sticky {
+  position: sticky;
+  top: 140px;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.feature-image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+  border-radius: 7px;
+  margin-top: 60px;
+  will-change: transform;
+}
+
+.feature-image-wrap img {
+  position: absolute;
+  top: 0px;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+  border-radius: 7px;
+
+  will-change: transform;
+}
+
+.feature-text {
+  position: absolute;
+  top: 0;
+
+  width: calc(100% - 80px);
+  height: 160px;
+
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.8em;
+  line-height: 0.9;
+
+  color: #666;
+  z-index: 20;
+
+  will-change: font-size, letter-spacing;
+}
+
+.feature-text h2 {
+  position: absolute;
+  margin: 0;
+  font: inherit;
+  width: 42vw;
+  height: 160px;
+}
+
+.feature-text span {
+  position: absolute;
+  top: 0;
+  display: block;
+  white-space: nowrap;
+  will-change: transform;
+}
+.feature-left .feature-text {
+  right: 40px;
+}
+.feature-right .feature-text {
+  left: 40px;
+}
+
+@media (max-width: 768px) {
+  .feature-left .feature-text {
+    right: 25px;
+  }
+  .feature-right .feature-text {
+    left: 25px;
+  }
+}
+/* first feature: final alignment right */
+.feature-left .feature-text h2 {
+  right: 0;
+  transform-origin: right center;
+}
+
+.feature-left .feature-text span {
+  right: 0;
+  left: auto;
+}
+
+/* second feature: final alignment left */
+.feature-right .feature-text h2 {
+  left: 0;
+
+  transform-origin: left center;
+}
+
+.feature-right .feature-text span {
+  left: 0;
+}
+.feature-text span:nth-child(2) {
+  transform: translateX(58vw);
+}
+
+/******** FINAL LAYOUT *******/
+
+/* =========================
+   FINAL COMPOSITION
+========================= */
+
+.final-composition {
+  padding-top: 40px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#cfcfcf 0%, #cfcfcf 5%, #ffffff 100%);
+}
+
+.final-composition.is-open {
+  height: 224vh;
+  overflow: visible;
+}
+
+.final-inner {
+  position: sticky;
+  top: 10px;
+  height: 100%;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.final-block {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(80px);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.final-block img {
+  height: 28vh;
+  width: auto;
+  border-radius: 7px;
+  display: block;
+}
+
+.final-block h2 {
+  margin: 0;
+  max-width: 320px;
+  font-size: calc(36px, 4vw, 56px);
+  font-weight: 240;
+  line-height: 0.9;
+  letter-spacing: 0;
+  color: #666;
+}
+.heading-link {
+  color: inherit;
+  text-decoration: none;
+
+  font: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+}
+
+.final-vein {
+  bottom: 29vh;
+}
+.final-vein h2 {
+  position: absolute;
+  left: 12%;
+}
+.final-vein img {
+  position: absolute;
+  right: 12%;
+}
+.final-clothes {
+  bottom: 56vh;
+}
+.final-clothes h2 {
+  position: absolute;
+  text-align: right;
+  right: 12%;
+}
+.final-clothes img {
+  position: absolute;
+  left: 12%;
+}
+
+@media (max-width: 768px) {
+  .final-block img {
+    height: 22vh;
+  }
+
+  .final-block h2 {
+    font-size: 24px;
+    max-width: 450px;
+  }
+
+  .final-vein {
+    bottom: 24vh;
+  }
+
+  .final-vein h2 {
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 12vh;
+  }
+
+  .final-vein img {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .final-clothes {
+    bottom: 51vh;
+  }
+
+  .final-clothes h2 {
+    text-align: center;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 11vh;
+  }
+
+  .final-clothes img {
+    width: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.final-footer {
+  left: 0;
+  bottom: 12px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7%;
+  background-color: white;
+  font-size: 12px;
+  color: #666;
+}
+@media (max-width: 768px) {
+  .final-footer {
+    font-size: 12px;
+  }
+}
+/* project stack*/
+.final-project {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  min-height: 520px;
+  position: relative;
+}
+
+.final-project h2 {
+  flex: 0 0 38%;
+  align-self: flex-start;
+  position: absolute;
+  max-width: 40vh;
+  left: 12%;
+  margin-top: 10vh;
+  padding-top: 0;
+}
+
+.final-project .project-image-side {
+  --card-width: min(42vw, 620px);
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  min-height: 420px;
+  position: relative;
+  overflow: visible;
+  margin-right: 40px;
+}
+.final-project .project-stack {
+  position: relative;
+  margin-left: auto;
+  margin-right: 12%;
+  top: 0;
+  width: var(--card-width);
+
+  height: clamp(180px, 28vh, 320px);
+
+  overflow: visible;
+  pointer-events: auto;
+  z-index: 999;
+}
+.final-project .project-card {
+  inset: 0;
+  width: 100%;
+  height: 28vh;
+  object-fit: cover;
+  border-radius: 7px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-card-link {
+  position: absolute;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  right: 12%;
+  transition: transform 0.7s ease;
+}
+
+.final-project .project-card img {
+  position: absolute;
+  right: 0px;
+  height: 100%;
+  width: auto;
+  display: block;
+  border-radius: 7px;
+}
+/* default: stacked */
+
+.final-project .project-card:nth-child(1) {
+  transform: translateX(0);
+  z-index: 4;
+}
+
+.final-project .project-card:nth-child(2) {
+  transform: translateX(16px);
+  z-index: 3;
+}
+
+.final-project .project-card:nth-child(3) {
+  transform: translateX(32px);
+  z-index: 2;
+}
+
+.final-project .project-card:nth-child(4) {
+  transform: translateX(48px);
+  z-index: 1;
+}
+
+/* clicked: unfolded */
+.final-project.is-open {
+  height: 1600px;
+}
+
+.final-project.is-open .project-card-link:nth-child(1) {
+  transform: translateY(0);
+}
+
+.final-project.is-open .project-card-link:nth-child(2) {
+  transform: translateY(36vh);
+}
+
+.final-project.is-open .project-card-link:nth-child(3) {
+  transform: translateY(72vh);
+}
+
+.final-project.is-open .project-card-link:nth-child(4) {
+  transform: translateY(108vh);
+}
+
+.final-project.is-open .project-image-side {
+  height: 145vh;
+}
+
+.final-project.is-open ~ .final-vein {
+  top: 195vh;
+}
+
+.final-project.is-open ~ .final-clothes {
+  top: 160vh;
+}
+.project-fold-button {
+  display: none;
+  pointer-events: auto;
+  z-index: 9999;
+}
+
+.final-project.is-open .project-fold-button {
+  position: absolute;
+  left: 50%;
+  top: 137vh;
+  transform: translateX(-50%);
+  display: block;
+  z-index: 5000;
+  background: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  color: grey;
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+/* Final drawer / pin behavior */
+.hero {
+  min-height: 100vh;
+}
+
+.content-drawer {
+  position: relative;
+  background: #cfcfcf;
+  z-index: 20;
+  transition: transform 0.8s ease;
+}
+
+/* only transform when folded */
+body.content-folded .content-drawer {
+  transform: translateY(-100vh);
+  pointer-events: none;
+}
+/*
+.content-toggle {
+  position: fixed;
+  right: 24px;
+  top: 24px;
+  z-index: 9999;
+
+  display: none;
+  width: 44px;
+  height: 44px;
+
+  border: none;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+body.final-pinned .content-toggle,
+body.content-folded .content-toggle {
+  display: block;
+}
+
+.final-composition.is-pinned {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 9998;
+  background: #cfcfcf;
+  overflow: hidden;
+}
+
+.final-composition.is-pinned .final-inner {
+  position: relative !important;
+  top: 0 !important;
+  height: 100vh !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.final-composition.is-pinned .final-block {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+body.final-pinned {
+  overflow: hidden;
+}
+*/
