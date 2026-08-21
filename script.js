@@ -64,8 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebarPlaceholder.outerHTML = logoTemplate;
   }
 
-  //card selection functions
-  // Remove the old 'previouslyHiddenCardId' global variable entirely!
+  let modelViewerLoader;
+
+  function ensureModelViewer() {
+    if (customElements.get("model-viewer")) return Promise.resolve();
+    if (modelViewerLoader) return modelViewerLoader;
+
+    modelViewerLoader = new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src =
+        "https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js";
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+
+    return modelViewerLoader;
+  }
+
+  // Card selection functions
 
   window.updateMainCard = function (clickedCardElement, htmlContent) {
     if (!htmlContent) {
@@ -84,6 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const mainViewer = projectWindow.querySelector(".main-viewer");
     if (mainViewer) {
       mainViewer.innerHTML = htmlContent;
+      if (htmlContent.includes("<model-viewer")) {
+        ensureModelViewer().catch(() => {
+          mainViewer.innerHTML =
+            "<p>The 3D viewer could not load. Please check your connection and try again.</p>";
+        });
+      }
     }
 
     // 3. Find and reveal any card that was previously hidden inside THIS window only
@@ -98,21 +122,66 @@ document.addEventListener("DOMContentLoaded", () => {
     clickedCardElement.classList.add("hidden");
   };
 
-  // 5. Smart initialization engine to load the default cards cleanly
-  window.onload = function () {
-    document.querySelectorAll(".project-window").forEach((windowBlock) => {
-      const firstCard = windowBlock.querySelector(".sidebar-card");
-      if (firstCard) {
-        // Read the html code directly out of the card's onclick attribute
-        const onClickAttr = firstCard.getAttribute("onclick");
-        const match = onClickAttr.match(/`([\s\S]*?)`/);
+  const garmentWindows = document.querySelectorAll(".project-window");
+  if (garmentWindows.length) {
+    const loadDefaultGarment = (projectWindow) => {
+      if (projectWindow.dataset.defaultLoaded === "true") return;
 
-        if (match && match[1]) {
-          const contentToLoad = match[1];
-          // Run the engine manually on load without forcing an erratic click
-          updateMainCard(firstCard, contentToLoad);
-        }
-      }
-    });
-  };
+      const firstCard = projectWindow.querySelector(".sidebar-card");
+      const onClickAttr = firstCard?.getAttribute("onclick") || "";
+      const match = onClickAttr.match(/`([\s\S]*?)`/);
+      if (!firstCard || !match?.[1]) return;
+
+      projectWindow.dataset.defaultLoaded = "true";
+      updateMainCard(firstCard, match[1]);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const garmentObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            loadDefaultGarment(entry.target);
+            garmentObserver.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px", threshold: 0.01 },
+      );
+
+      garmentWindows.forEach((projectWindow) =>
+        garmentObserver.observe(projectWindow),
+      );
+    } else {
+      garmentWindows.forEach(loadDefaultGarment);
+    }
+  }
+
+  const deferredVideos = document.querySelectorAll("video[data-autoplay]");
+  if (deferredVideos.length) {
+    const mobileMedia = window.matchMedia("(max-width: 768px)").matches;
+
+    if (mobileMedia) {
+      deferredVideos.forEach((video) => {
+        video.controls = true;
+        video.preload = "none";
+      });
+      return;
+    }
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const video = entry.target;
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { rootMargin: "200px 0px", threshold: 0.05 },
+    );
+
+    deferredVideos.forEach((video) => videoObserver.observe(video));
+  }
 });

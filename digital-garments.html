@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kai's Digital Garments Gallery</title>
 
-    <link rel="stylesheet" type="text/css" href="style-gallary.css" />
+    <link rel="stylesheet" type="text/css" href="style-gallary.css?v=20260821-2" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -13,12 +13,7 @@
     rel="stylesheet"
   />
 
-    <script src="script.js"></script>
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.2.0/model-viewer.min.js"
-    >
-    </script>
+    <script src="script.js?v=20260821-3"></script>
   </head>
 
   <body>
@@ -46,35 +41,26 @@
         class="sidebar-card"
         onclick="
           updateMainCard( this,
-            `<model-viewer src='project-eman/digital-assets/webdisplay.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='1.11'></model-viewer>`
+            `<model-viewer src='project-eman/digital-assets/webdisplay.glb' loading='lazy' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='1.11'></model-viewer>`
           )">
-        <model-viewer
-          src="project-eman/digital-assets/webdisplay.glb"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          tone-mapping="neutral"
-          shadow-intensity="1"
-          exposure="1.11  ;"
-        >
-        </model-viewer>
+        <model-viewer class="sidebar-model" data-src="project-eman/digital-assets/webdisplay.glb" loading="lazy" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="1.11" aria-label="Curves Out 3D garment"></model-viewer>
       </div>
 
       <div
         class="sidebar-card"
         onclick="
           updateMainCard(this,
-            `<img src='project-eman/digital-assets/pattern-layout.png' alt='2D pattern'>`
+            `<img src='images/digital-garments/eman-pattern-alpha.webp' alt='2D pattern'>`
           )">
-        <img src="project-eman/digital-assets/pattern-layout.png" alt="2D pattern">
+        <img loading="lazy" decoding="async" src="images/digital-garments/eman-pattern-alpha.webp" alt="2D pattern">
       </div>
             <div
         class="sidebar-card card-medium"
         onclick="
           updateMainCard(this,
-            `<img src='project-eman/p1-photo/576A0061-edited.jpg' alt='schemata'>`
+            `<img src='images/digital-garments/eman-photo.webp' alt='schemata'>`
           )">
-        <img src="project-eman/p1-photo/576A0061-edited.jpg" alt="schemata">
+        <img loading="lazy" decoding="async" src="images/digital-garments/eman-photo.webp" alt="schemata">
       </div>
 
     </div>
@@ -104,18 +90,9 @@
         class="sidebar-card card-small"
         onclick="
           updateMainCard(this,
-            `<model-viewer src='project-vein/vein-pants-women.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
+            `<model-viewer src='project-vein/vein-pants-women.glb' loading='lazy' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
           )">
-        <model-viewer
-          src="project-vein/vein-pants-women.glb"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          tone-mapping="neutral"
-          shadow-intensity="1"
-          exposure="0.75  ;"
-        >
-        </model-viewer>
+        <model-viewer class="sidebar-model" data-src="project-vein/vein-pants-women.glb" loading="lazy" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.75" aria-label="VEIN pants 3D garment"></model-viewer>
       </div>
 
       <!-- CARD 2 -->
@@ -125,7 +102,7 @@
           updateMainCard(this,
             `<img src=project-vein/gallery-assets/pants-pattern.png alt='2D pattern'>`,
           )">
-        <img src=project-vein/gallery-assets/pants-pattern.png alt="2D pattern">
+        <img loading="lazy" decoding="async" src=project-vein/gallery-assets/pants-pattern.png alt="2D pattern">
       </div>
             <div
         class="sidebar-card card-medium"
@@ -133,15 +110,15 @@
           updateMainCard(this,
             `<img src=project-vein/gallery-assets/vein-pants-flats.png alt='schemata'>`,
           )">
-        <img src=project-vein/gallery-assets/vein-pants-flats.png alt="schemata">
+        <img loading="lazy" decoding="async" src=project-vein/gallery-assets/vein-pants-flats.png alt="schemata">
       </div>
             <div
         class="sidebar-card card-medium"
         onclick="
           updateMainCard(this,
-            `<img src=project-vein/photoshoot/unisex.jpg alt='2D pattern'>`,
+            `<img src=images/digital-garments/vein-unisex.webp alt='Garment photoshoot'>`,
           )">
-        <img src= project-vein/photoshoot/unisex.jpg alt="2D pattern">
+        <img loading="lazy" decoding="async" src="images/digital-garments/vein-unisex.webp" alt="Garment photoshoot">
       </div>
 
 
@@ -173,18 +150,9 @@
         class="sidebar-card card-small"
         onclick="
           updateMainCard(this,
-            `<model-viewer src='project-vein/jacket-wool.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
+            `<model-viewer src='project-vein/jacket-wool.glb' loading='lazy' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.75'></model-viewer>`,
           )">
-        <model-viewer
-          src="project-vein/jacket-wool.glb"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          tone-mapping="neutral"
-          shadow-intensity="1"
-          exposure="0.75  ;"
-        >
-        </model-viewer>
+        <model-viewer class="sidebar-model" data-src="project-vein/jacket-wool.glb" loading="lazy" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.75" aria-label="VEIN jacket 3D garment"></model-viewer>
       </div>
 
       <!-- CARD 2 -->
@@ -194,7 +162,7 @@
           updateMainCard(this,
             `<img src=project-vein/gallery-assets/vein-jacket01-flats.png alt='2D pattern'>`,
           )">
-        <img src=project-vein/gallery-assets/vein-jacket01-flats.png alt="2D pattern">
+        <img loading="lazy" decoding="async" src=project-vein/gallery-assets/vein-jacket01-flats.png alt="2D pattern">
       </div>
             <div
         class="sidebar-card card-medium"
@@ -202,7 +170,7 @@
           updateMainCard(this,
             `<img src=project-vein/gallery-assets/jacket01-pattern.png alt='schemata'>`,
           )">
-        <img src=project-vein/gallery-assets/jacket01-pattern.png alt="schemata">
+        <img loading="lazy" decoding="async" src=project-vein/gallery-assets/jacket01-pattern.png alt="schemata">
       </div>
 
     </div>
@@ -232,18 +200,9 @@
         class="sidebar-card"
         onclick="
           updateMainCard( this,
-            `<model-viewer src='project-vein/gallery-assets/vein-cropped-jacket.glb' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.76'></model-viewer>`
+            `<model-viewer src='project-vein/gallery-assets/vein-cropped-jacket.glb' loading='lazy' ar ar-modes='webxr scene-viewer quick-look' camera-controls tone-mapping='neutral' shadow-intensity='1' exposure='0.76'></model-viewer>`
           )">
-        <model-viewer
-          src="project-vein/gallery-assets/vein-cropped-jacket.glb"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          tone-mapping="neutral"
-          shadow-intensity="1"
-          exposure="0.76;"
-        >
-        </model-viewer>
+        <model-viewer class="sidebar-model" data-src="project-vein/gallery-assets/vein-cropped-jacket.glb" loading="lazy" camera-controls tone-mapping="neutral" shadow-intensity="1" exposure="0.76" aria-label="VEIN cropped jacket 3D garment"></model-viewer>
       </div>
 
       <div
@@ -252,15 +211,15 @@
           updateMainCard(this,
             `<img src='project-vein/gallery-assets/cropped-jacket-pattern.png' alt='2D pattern'>`
           )">
-        <img src="project-vein/gallery-assets/cropped-jacket-pattern.png" alt="2D pattern">
+        <img loading="lazy" decoding="async" src="project-vein/gallery-assets/cropped-jacket-pattern.png" alt="2D pattern">
       </div>
       <div
         class="sidebar-card"
         onclick="
           updateMainCard(this,
-            `<img src='project-vein/photoshoot/VEIN-final-124.jpeg' alt='2D pattern'>`
+            `<img src='images/digital-garments/vein-cropped-photo.webp' alt='Garment photoshoot'>`
           )">
-        <img src="project-vein/photoshoot/VEIN-final-124.jpeg" alt="2D pattern">
+        <img loading="lazy" decoding="async" src="images/digital-garments/vein-cropped-photo.webp" alt="Garment photoshoot">
       </div>
 
     </div>

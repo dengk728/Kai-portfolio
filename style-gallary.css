@@ -326,6 +326,13 @@ h3 {
   min-height: 0;
 }
 
+.sidebar-model {
+  width: 100%;
+  min-height: 110px;
+  border-radius: 4px;
+  background: linear-gradient(145deg, #f7f7f7, #dedede);
+}
+
 /* Main Viewer Panel */
 .main-panel {
   flex: 1;
